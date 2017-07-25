@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/toMyAccount', function(req, res, next) {
   // res.send('respond with a resource');
   // res.set('views', __dirname +  '/views/myaccount');
-  res.render('index');
+  res.render('myaccount/index');
 });
-
+// /myaccount/toMyAccount
 module.exports = router;
