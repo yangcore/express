@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>投标记录</title>
+		<!--重置css-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/reset.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/bidRecord.css" />
+		<!--分页样式-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/laypage.css" />		
+		<!--日历样式-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/jedate.css"/>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/header.js" type="text/javascript" charset="utf-8"></script>
+		<!--分页插件-->
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/laypage.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--日历插件-->
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/jquery.jedate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/bidRecord.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="header_warp"></div>
+		<div class="main">
+			<div class="main_content">
+				<!-- 公用左边-->
+				<div class="myBidLeft">
+					<ul>
+						<a href=""><li class="leftAccount"><span class="same span1"></span>我的账户</li></a>
+						<a href=""><li class="leftStrategy"><span class="same span2"></span>我的策略</li></a>
+						<a href=""><li class="leftRecord current"><span class="same span3"></span>投标记录</li></a>
+						<a href=""><li class="leftSummary"><span class="same span4"></span>投标统计</li></a>
+					</ul>
+				</div>
+				<!--右边-->
+				<div class="main_right">
+					<div class="main_right_content">
+						<h1 class="content_title"><span>投标记录</span></h1>
+						<div class="bid_date">
+							<ul>
+								<li class="li1">投标日期</li>
+								<li class="li2"><input id="startDate" readonly/></li>
+								<li class="li3"><span>——</span></li>
+								<li class="li4"><input id="endDate" readonly/></li>
+								<!--<li class="li5">查询</li>-->
+							</ul>
+						</div>
+						<div class="bid_tab">
+							<ul>
+								<li ref="" class="current">全部</li>
+								<li ref="0">投标中</li>
+								<li ref="1">收款中</li>
+								<li ref="2">已还清</li>
+							</ul>
+							<span class="bid_amount">投标金额：<span>12,568,464.33</span>元</span>
+						</div>
+						<div class="bid_info">
+							<ul class="bid_info_title">
+								<li class="li1">标的编号</li>
+								<li class="li3">策略名称</li>
+								<li class="li4">投标金额(元)</li>
+								<li class="li5">利率</li>
+								<li class="li6">期限</li>
+								<li class="li7">投标时间</li>
+							</ul>
+							<div class="bid_info_box">
+							
+							</div>
+							<div>
+								<div class="pagesinfo">
+									<span>共<span id="totalNum"></span>条记录 &nbsp;&nbsp;&nbsp;&nbsp;共<span id="totalPage"></span>页</span>
+								</div>
+								<div class="pages clearfix" id="pages">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

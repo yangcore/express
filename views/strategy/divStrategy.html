@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义策略</title>
+		<!--重置css-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/reset.css" />
+		
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/header.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/tools.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if (gte IE 6)&(lte IE 8)]>
+			
+		<![endif]-->
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/customPolicy.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			document.title="自定义策略"
+		</script>
+	</head>
+	<body>
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/customPolicy.css" />
+		<div id="header_warp"></div>
+		
+		<div class="main">
+			<div class="main_content">
+				<!-- 公用左边-->
+				<div class="myBidLeft">
+					<ul>
+						<li class="leftAccount"><span class="same span1"></span>我的账户</li>
+						<li class="leftStrategy current"><span class="same span2"></span>我的策略</li>
+						<li class="leftRecord"><span class="same span3"></span>投标记录</li>
+						<li class="leftSummary"><span class="same span4"></span>投标统计</li>
+					</ul>
+				</div>
+				
+					<!--右边-->
+				<div class="main_right">
+					<div class="main_right_content">
+						<h1 class="content_title"><span>自定义策略</span></h1>
+					<form id="strategy_form">
+						<div class="strategy_name_amount">
+							<p>
+								<span>策略名称</span>
+								<input type="text" name="strategyName" id="strategy_name"/> 
+								<span>当前策略单笔投资额</span>
+								<input type="text" name="strategyMoney" id="strategy_amount"/>
+							</p>
+							<p class="strategy_name_errormsg"></p>
+							<p class="strategy_amount_errormsg"></p>
+						</div>
+						<div class="strategy_title">
+							<h2>借款基本信息 <span class="slideDown"></span></h2>
+						</div>
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">借款期限范围：</span>
+								<input type="text" stu="0" name="jkqxStart" onblur="csstartvaid(this,/^(([1-9]\d{0,})|0)?$/,'请输入正整数数字')"  class="input width210" id="jkqxStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1"  onblur="csendvaid(this,/^(([1-9]\d{0,})|0)?$/,'请输入正整数数字')"  class="input width210" id="jkqxEnd" name="jkqxEnd"/>
+								<span class="end_errormsg"></span>
+								<span>个月</span>
+								
+							</p>
+						</div>
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">借款金额范围：</span>
+								<input type="text"  stu="0" onblur="csstartvaid(this,/^(([1-9]\d{0,})|0)?$/,'请输入正整数数字')" class="input width210" id="jkmoneyStart" name="jkmoneyStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1"  onblur="csendvaid(this,/^(([1-9]\d{0,})|0)?$/,'请输入正整数数字')" class="input width210" id="jkmoneyEnd" name="jkmoneyEnd"/>
+								<span class="end_errormsg"></span>
+								<span>元</span>
+							</p>
+						</div>
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">利率范围：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this,/^(([1-9]\d{0,})|0)(\.\d{1,2})?$/,'请输入大于等于0且最多保留两位数字')" class="input width210" id="lnvFwStart" name="lnvFwStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this,/^(([1-9]\d{0,})|0)(\.\d{1,2})?$/,'请输入大于等于0且最多保留两位数字')"  class="input width210" id="lnvFwEnd" name="lnvFwEnd"/>
+								<span class="end_errormsg"></span>
+								<span>%</span>
+							</p>
+						</div>
+						<!--魔镜等级-->
+						<div class="from_item clearfix marginBottom20" id="checkedList">
+							<span class="option_name">魔镜等级：</span>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox" name="checkedList" id="male1"  value="AAA"/>
+								  <label  for="male1"  >AAA</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox" name="checkedList" id="male2"  value="AA"/>
+								 <label  for="male2" >AA</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox" name="checkedList"   id="male3" value="A"/>
+								 <label   for="male3">A</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox" name="checkedList"  id="male4" value="B"/>
+								 <label  for="male4">B</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox" name="checkedList"  id="male5" value="C" />
+								 <label  for="male5">C</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox" name="checkedList"  id="male6" value="D"/>
+								 <label  for="male6">D</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox" name="checkedList"   id="male7" value="E"/>
+								 <label  for="male7">E</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox" name="checkedList"  id="male8" value="F"/>
+								 <label  for="male8">F</label>
+								</div>
+						</div>
+						<!--___________________________________________________________________________-->
+						<div class="strategy_title">
+							<h2>借款人的基本信息 <span class="slideDown"></span></h2>
+						</div>
+						<!--年龄-->
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">年龄：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(?:[1-9][0-9]?|100)$/,'年龄必须是1~100的整数')" class="input width210" id="jkRenAgeStart" name="jkRenAgeStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(?:[1-9][0-9]?|100)$/,'年龄必须是1~100的整数')" class="input width210" id="jkRenAgeEnd" name="jkRenAgeEnd"/>
+								<span class="end_errormsg"></span>
+								<span>岁</span>
+							</p>
+						</div>
+						<!--性别-->
+						<div class="from_item clearfix" id="sexRadio">
+							<span class="option_name">性别：</span>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male9" name="sexRadio" value="1"/>
+								 <label  for="male9">男</label>
+								</div>
+								
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male10" name="sexRadio" value="2"/>
+								 <label  for="male10">女</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male11" name="sexRadio" value="0"/>
+								 <label  for="male11">无</label>
+								</div>
+						</div>
+						<!--学历认证状态-->
+						<div class="from_item clearfix" id="xlRadio">
+							<span class="option_name">学历认证状态：</span>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male12" name="xlRadio" value="0"/>
+								 <label  for="male12">已认证</label>
+								</div>
+								
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male13" name="xlRadio" value="1"/>
+								 <label  for="male13">未认证</label>
+								</div>
+						</div>
+						
+						<!--学历-->
+						<div class="from_item clearfix" id="xlcheckList">
+							<span class="option_name">学历：</span>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male14" name="xlcheckList" value="博士"/>
+								 <label  for="male14">博士</label>
+								</div>
+								
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male15" name="xlcheckList" value="硕士"/>
+								 <label  for="male15">硕士</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male16" name="xlcheckList" value="本科"/>
+								 <label  for="male16">本科</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male17" name="xlcheckList" value="专科"/>
+								 <label  for="male17">专科</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male18" name="xlcheckList" value="专科(高职)"/>
+								 <label  for="male18">专科(高职)</label>
+								</div>
+								<span class="option_name"></span>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male19" name="xlcheckList" value="夜大电大函大普通班"/>
+								 <label  for="male19">夜大电大函大普通班</label>
+								</div>
+								
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male20" name="xlcheckList" value="第二学士学位"/>
+								 <label  for="male20">第二学士学位</label>
+								</div>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male21" name="xlcheckList" value="高升本"/>
+								 <label  for="male21">高升本</label>
+								</div>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male22" name="xlcheckList" value="无"/>
+								 <label  for="male22">无</label>
+								</div>
+						</div>
+						<!--学习形式-->
+						<div class="from_item clearfix" id="xxxsCheckList">
+							<span class="option_name">学习形式：</span>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male23" name="xxxsCheckList" value="普通"/>
+								 <label  for="male23">普通</label>
+								</div>
+								
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male24" name="xxxsCheckList" value="研究生"/>
+								 <label  for="male24">研究生</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male25" name="xxxsCheckList" value="成人"/>
+								 <label  for="male25">成人</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male26" name="xxxsCheckList" value="自考"/>
+								 <label  for="male26">自考</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male27" name="xxxsCheckList" value="网络教育"/>
+								 <label  for="male27">网络教育</label>
+								</div>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male28" name="xxxsCheckList" value="开放教育"/>
+								 <label  for="male28">开放教育</label>
+								</div>
+								<span class="option_name"></span>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male29" name="xxxsCheckList" value="业余"/>
+								 <label  for="male29">业余</label>
+								</div>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male30" name="xxxsCheckList" value="函授"/>
+								 <label  for="male30">函授</label>
+								</div>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male31" name="xxxsCheckList" value="夜大学"/>
+								 <label  for="male31">夜大学</label>
+								</div>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male32" name="xxxsCheckList" value="普通全日制"/>
+								 <label  for="male32">普通全日制</label>
+								</div>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male33" name="xxxsCheckList" value="脱产"/>
+								 <label  for="male33">脱产</label>
+								</div>
+								
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male34" name="xxxsCheckList" value="自学考试"/>
+								 <label  for="male34">自学考试</label>
+								</div>
+								<span class="option_name"></span>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male35" name="xxxsCheckList" value="不详"/>
+								 <label  for="male35">不详</label>
+								</div>
+								<div class="from_checkbox marginTop20">
+								 <input type="checkbox" class="checkbox"  id="male36" name="xxxsCheckList" value="无"/>
+								 <label  for="male36">无</label>
+								</div>
+						</div>
+						<!--征信认证-->
+						<div class="from_item clearfix" id="zxRadio">
+							<span class="option_name">征信认证：</span>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male37" name="zxRadio" value="1"/>
+								 <label  for="male37">已认证</label>
+								</div>
+								
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male38" name="zxRadio" value="0"/>
+								 <label  for="male38">未认证</label>
+								</div>
+						</div>
+						<!--手机认证-->
+						<div class="from_item clearfix marginBottom20" id="phoneRadio">
+							<span class="option_name">手机认证：</span>
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male39" name="phoneRadio" value="1"/>
+								 <label  for="male39">已认证</label>
+								</div>
+								
+								<div class="from_checkbox">
+								 <input type="checkbox" class="checkbox"  id="male40" name="phoneRadio" value="0"/>
+								 <label  for="male40">未认证</label>
+								</div>
+						</div>
+						
+						<!--借款历史统计-->
+						
+						<div class="strategy_title">
+							<h2>借款历史统计 <span class="slideDown"></span></h2>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">历史成功借款次数范围：</span>
+								<input type="text" stu="0" onblur="cscsstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)" class="input width210" id="lsJkcsStart" name="lsJkcsStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="cscsendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)"  class="input width210" id="lsJkcsEnd" name="lsJkcsEnd"/>
+								<span class="end_errormsg"></span>
+								<span>次</span>
+							</p>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">历史流标借款次数范围：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)"  class="input width210" id="lsJklbStart" name="lsJklbStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)"  class="input width210" id="lsJklbEnd" name="lsJklbEnd"/>
+								<span class="end_errormsg"></span>
+								<span>次</span>
+							</p>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">正常还清次数范围：</span>
+								<input type="text" stu="0"  onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)" class="input width210" id="zchqcsStart" name="zchqcsStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1"  onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)"  class="input width210" id="zchqcsEnd" name="zchqcsEnd"/>
+								<span class="end_errormsg"></span>
+								<span>次</span>
+							</p>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">预期(0~15天)还清次数范围：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)"  class="input width210" id="yqcs015Start" name="yqcs015Start"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)"    class="input width210" id="yqcs015End" name="yqcs015End"/>
+								<span class="end_errormsg"></span>
+								<span>次</span>
+							</p>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">预期(15天以上)次数范围：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)" class="input width210" id="yqcs15Start" name="yqcs15Start"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-1000的整数',1000)" class="input width210" id="yqcs15End" name="yqcs15End"/>
+								<span class="end_errormsg"></span>
+								<span>次</span>
+							</p>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">待还金额范围：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)" class="input width210" id="dhMoneyStart" name="dhMoneyStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)"  class="input width210" id="dhMoneyEnd" name="dhMoneyEnd"/>
+								<span class="end_errormsg"></span>
+								<span>次</span>
+							</p>
+						</div>
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">单笔最高借款金额：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)" class="input width210" id="highestPrincipalStart" name="highestPrincipalStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)"  class="input width210" id="highestPrincipalEnd" name="highestPrincipalEnd"/>
+								<span class="end_errormsg"></span>
+								<span>元</span>
+							</p>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">累计借款金额：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)" class="input width210" id="totalPrincipalStart" name="totalPrincipalStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)"  class="input width210" id="totalPrincipalEnd" name="totalPrincipalEnd"/>
+								<span class="end_errormsg"></span>
+								<span>元</span>
+							</p>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">历史最高负债：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)" class="input width210" id="highestDebtStart" name="highestDebtStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)" class="input width210" id="highestDebtEnd" name="highestDebtEnd"/>
+								<span class="end_errormsg"></span>
+								<span>元</span>
+							</p>
+						</div>
+						
+						<div class="from_item">
+							<p class="_input">
+								<span class="option_name">借款金额/待还金额：</span>
+								<input type="text" stu="0" onblur="csstartvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)" class="input width210" id="borrowOwingScaleintStart" name="borrowOwingScaleintStart"/>
+								<span class="start_errormsg"></span>
+								<span>至</span>
+								<input type="text" stu="1" onblur="csendvaid(this, /^(([1-9]\d{0,})|0)?$/,'请输入0-50000000的整数',50000000)" class="input width210" id="borrowOwingScaleintEnd" name="borrowOwingScaleintEnd"/>
+								<span class="end_errormsg"></span>
+								<span>倍</span>
+							</p>
+						</div>
+					</form>	
+						<div class="save_strategy">
+							保存策略
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="//cdn.bootcss.com/nwmatcher/1.3.6/nwmatcher.min.js"></script>
+			<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/selectivizr.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

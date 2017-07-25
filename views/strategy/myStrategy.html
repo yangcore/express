@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的策略</title>
+		<!--重置css-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/reset.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/myStrategy.css" />
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/header.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/highcharts/4.2.7/highcharts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/highcharts/4.2.7/highcharts-3d.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/myStrategy.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if (gte IE 6)&(lte IE 8)]>
+			
+			<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/selectivizr.min.js" type="text/javascript" charset="utf-8"></script>
+			<noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+			
+		<![endif]-->
+	</head>
+
+	<body>
+		<div id="header_warp"></div>
+		<div class="main">
+			<!--编辑策略名称弹框-->
+			<div class="bg-strategy"></div>
+	            <div class="bg-strategy-name">
+	            	<h1>策略名称</h1>
+			        <a class="bg-strategy-remove" href="javascript:;"></a>
+			            <div class="bidMoney">
+			         	    <div>
+			         		    <span class="singleMoney">每笔投标金额</span>
+			         	        <input type="text" name="" id="singleMoney"  placeholder="50~500"/>
+			         	        <span style="color: #666666;">元</span><br />
+			         	        <span class="errorMsg ml110">需要50~500的整数</span>
+			         	    </div>
+			         	    <div class="limit">
+			         		    <span class="singleMoney">每日投标上限</span>
+			         	        <input type="text" name="" id="bidlimitMoney"  placeholder="0~99999999"/>
+			         	        <span style="color: #666666;">元</span>
+			         	        <span class="errorMsg ml110">需要0~99999999</span>
+			         	    </div>
+			            </div>
+			            <div class="bg-strategy-footer">
+			            	<a href="javascript:;" class="sure">确定</a>
+			            	<a href="javascript:;" class="remove">取消</a>
+			            </div>
+		        </div>
+		        
+		        
+			<div class="main_content">
+				<!-- 公用左边-->
+				<div class="myBidLeft">
+					<ul>
+						<li class="leftAccount"><span class="same span1"></span>我的账户</li>
+						<li class="leftStrategy current"><span class="same span2"></span>我的策略</li>
+						<li class="leftRecord"><span class="same span3"></span>投标记录</li>
+						<li class="leftSummary"><span class="same span4"></span>投标统计</li>
+					</ul>
+				</div>
+				<!--右边-->
+				<div class="main_right">
+					<div class="main_right_content">
+						<h1 class="content_title"><span>我的策略</span></h1>
+						<!--我的策略饼图-->
+						<div class="my_pie">
+							<div class="my_pie_left">
+
+							</div>
+							<!--<div class="my_pie_right">
+								<ul>
+									<li>
+										<span></span> 策略1：1,726元
+										<br />
+										<br /> 占比：
+										<b>10%</b>
+									</li>
+									<li>
+										<span></span> 策略1：1,726元
+										<br />
+										<br /> 占比：
+										<b></b>
+									</li>
+								</ul>
+							</div>-->
+						</div>
+						<!--自定义策略-->
+						<div class="deStrategy">
+							<span class="define">自定义策略</span>
+							<div class="defineContent">
+								<ul>
+									<li class="leftLi">
+										<span class="strategyName">策略名称</span>
+										<span class="strategyDes">策略描述策略描述</span>
+									</li>
+									<li class="rightLi">
+										<em>编辑</em>
+										<span class="slideDown"></span>
+										<span class="slideUp"></span>
+										<span class="off">
+											<input type="checkbox" id="strategy" class="chooseBtn" />
+										    <label for="strategy" class="button_tip"></label>
+										</span>
+									</li>
+								</ul>
+								<ul>
+									<li class="leftLi">
+										<span class="strategyName">策略名称</span>
+										<span class="strategyDes">策略描述策略描述</span>
+									</li>
+									<li class="rightLi">
+										<em>编辑</em>
+										<span class="slideDown"></span>
+										<span class="slideUp"></span>
+										<span class="off">
+											<input type="checkbox" id="strategy1" class="chooseBtn" />
+										    <label for="strategy1" class="button_tip"></label>
+										</span>
+									</li>
+								</ul>
+							</div>
+								<a class="addStrategy">
+									<span class="add"></span> 自定义策略
+								</a>
+						</div>
+						<!--系统策略-->
+						<div class="sys_strategy">
+							<h1 class="content_title">系统策略</h1>
+							<div class="sys_strategy_list">
+								<ul class="sys_strategy_list_title">
+									<li class="li1">
+										<h3>称策略名称</h3><span>策略描述策略描述</span></li>
+									<li class="li2">
+										<input type="checkbox"  id="male" class="chooseBtn"/>
+										<label for="male" class="button_tip" ></label>
+									</li>
+								</ul>
+								<ul class="sys_strategy_list_info">
+									<li>期限：<span>6~10个月</span></li>
+									<li>每笔投标金额：<span>273,252.25元</span></li>
+									<li>每日投标上限：<span>252,893.23元</span></li>
+									<li class="lastli"><span><em>编辑</em><i class="sidedown"></i></span></li>
+								</ul>
+								<ul class="sys_strategy_list_info2">
+									<li><p>20,238,347元</p><span>投资金额</span></li>
+									<li><p>20,238,347元</p><span>已收本金</span></li>
+									<li><p>20,238,347元</p><span>待收本金</span></li>
+									<li><p>20,238,347元</p><span>已收益</span></li>
+									<li><p>20,238,347元</p><span>预计待收益</span></li>
+								</ul>
+								<div class="sys_strategy_chart">
+									<p>平均投标利率</p>
+									<div class="sys_strategy_chart_content" id="sys_strategy_chart_content">
+										
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="sys_strategy_list">
+								<ul class="sys_strategy_list_title">
+									<li class="li1">
+										<h3>称策略名称</h3><span>策略描述策略描述</span></li>
+									<li class="li2">
+										<input type="checkbox"  id="male" class="chooseBtn"/>
+										<label for="male" class="button_tip" ></label>
+									</li>
+								</ul>
+								<ul class="sys_strategy_list_info">
+									<li>期限：<span>6~10个月</span></li>
+									<li>每笔投标金额：<span>273,252.25元</span></li>
+									<li>每日投标上限：<span>252,893.23元</span></li>
+									<li class="lastli"><span><em>编辑</em><i class="sidedown"></i></span></li>
+								</ul>
+								<ul class="sys_strategy_list_info2">
+									<li><p>20,238,347元</p><span>投资金额</span></li>
+									<li><p>20,238,347元</p><span>已收本金</span></li>
+									<li><p>20,238,347元</p><span>待收本金</span></li>
+									<li><p>20,238,347元</p><span>已收益</span></li>
+									<li><p>20,238,347元</p><span>预计待收益</span></li>
+								</ul>
+								<div class="sys_strategy_chart">
+									<p>平均投标利率</p>
+									<div class="sys_strategy_chart_content" id="sys_strategy_chart_content">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="helpNotes">
+							<span>帮助说明</span>
+							<p style="margin-top: 20px; margin-left: 18px;">1、什么是自动投标?</p><br />
+							<p style="margin-left: 40px;margin-bottom: 20px;">投资人根据自己的风险偏好和投资习惯设置投标条件，一旦有符合条件的借款列表出现，系统将自动帮您投标。</p>
+							<p style="margin-left: 18px;">2、为什么使用自动投标?</p><br />
+							<p style="margin-left: 40px;">1.系统根据您设置的条件帮您24小时投标，平均每2秒投出一笔资金，提高投标效率，减少资金站岗现象。<br /><br /> 2.分散投资，轻松赚取高收益，省心省时，投资人不必守在电脑前，也不漏掉一个好标。
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

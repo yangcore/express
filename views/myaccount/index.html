@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的账户</title>
+		<!--重置css-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/reset.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/myAccount.css" />
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/header.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/highcharts/4.2.7/highcharts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/layer.js" type="text/javascript" charset="utf-8"></script>
+		<!--[if (gte IE 6)&(lte IE 8)]>
+			
+			<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/selectivizr.min.js" type="text/javascript" charset="utf-8"></script>
+			<noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+			
+		<![endif]-->
+	</head>
+	<body>
+		
+		<div id="header_warp"></div>
+		<div class="main">
+			<div class="main_content">
+				<!-- 公用左边-->
+				<div class="myBidLeft">
+					<ul>
+						<li class="leftAccount current"><span class="same span1"></span>我的账户</li>
+						<li class="leftStrategy"><span class="same span2"></span>我的策略</li>
+						<li class="leftRecord"><span class="same span3"></span>投标记录</li>
+						<li class="leftSummary"><span class="same span4"></span>投标统计</li>
+					</ul>
+				</div>
+				<!--右边-->
+				<div class="main_right">
+					<div class="myAccount_content">
+						<div class="peopleIcon">
+							<em></em><span>pdu393844</span>
+						</div>
+						<div class="myAccount_money">
+							<ul>
+								<li class="li1">
+									<span>拍拍贷账户余额：<i  id="ppdBalance">125,500.50</i>元</span>
+									<span class="retain_amount">账户保留金额：
+										<em><i id="retain_amount">85,500.50</i>元</em>
+										  &nbsp;&nbsp;&nbsp;&nbsp;<b>修改</b>
+									</span>
+									<p class="errinfo" id="errinfo">可输入范围[0.00,99999999.99]的纯数字</p>
+								</li>
+								<li class="li2">
+								   <span>自动投标状态</span>
+								   <input type="checkbox" id="bidStatus"  class="chooseBtn" />
+								   <label for="bidStatus" class="button_tip" id="button_tip"></label>
+								</li>
+							</ul>
+						</div>
+					    <div class="AccountState">
+					    	<ul>
+						    	<li class="welath">
+						    		<p><span class="state">资金状况</span></p>
+						    		<p class="p" id="bidSumAmt">累计投标<span>238,347.20元</span></p>
+						    		<p class="p" id="repayBj">已收本金<span>238,347.20元</span></p>
+						    		<p class="p" id="owingBj" style="border: none;">待收本金<span>238,347.20元</span></p>
+						    	</li>
+						    	<li class="insume">
+						    		<p><span class="state">收益状况</span></p>
+						    		<p class="p" id="repayInterest">已收益<span>238,347.20元</span></p>
+						    		<p class="p" id="owingInterest" style="border: none;">预计待收益<span>238,347.20元</span></p>
+						    	</li>
+					    	</ul>
+					    </div>
+					    <div class="myAccount_average">
+					    	<p>我的平均投标利率</p>
+					    	<div class="My_average_age" id="My_average_age"></div>
+					    </div>
+					    
+					</div>
+				</div>
+		</div>
+	</div>
+	</body>
+	<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/myAccount.js" type="text/javascript" charset="utf-8"></script>
+</html>
