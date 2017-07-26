@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html>
-
-	<head>
-		<meta charset="UTF-8">
-		<title>我的策略</title>
-		<!--重置css-->
-		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/reset.css" />
+<%include ../header%>
 		<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/myStrategy.css" />
-		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/header.js" type="text/javascript" charset="utf-8"></script>
-		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/tools.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.bootcss.com/highcharts/4.2.7/highcharts.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.bootcss.com/highcharts/4.2.7/highcharts-3d.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/myStrategy.js" type="text/javascript" charset="utf-8"></script>
-		<!--[if (gte IE 6)&(lte IE 8)]>
-			
-			<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/selectivizr.min.js" type="text/javascript" charset="utf-8"></script>
-			<noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
-			
-		<![endif]-->
-	</head>
-
-	<body>
-		<div id="header_warp"></div>
 		<div class="main">
 			<!--编辑策略名称弹框-->
 			<div class="bg-strategy"></div>
@@ -52,14 +32,7 @@
 		        
 			<div class="main_content">
 				<!-- 公用左边-->
-				<div class="myBidLeft">
-					<ul>
-						<li class="leftAccount"><span class="same span1"></span>我的账户</li>
-						<li class="leftStrategy current"><span class="same span2"></span>我的策略</li>
-						<li class="leftRecord"><span class="same span3"></span>投标记录</li>
-						<li class="leftSummary"><span class="same span4"></span>投标统计</li>
-					</ul>
-				</div>
+				<%include ../bidLeft%>
 				<!--右边-->
 				<div class="main_right">
 					<div class="main_right_content">
@@ -202,5 +175,4 @@
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
+	<%include ../footer%>

@@ -1,0 +1,26 @@
+<div class="myBidLeft">
+    <ul>
+        <a href="/myaccount/toMyAccount">
+            <li class="leftAccount  <%if(leftcurrent=='myaccount'){%>
+											current
+									<%}%>
+            "><span class="same span1"></span>我的账户</li>
+        </a>
+        <a href="/strateryCtrl/toMyStrategy">
+            <li class="leftStrategy <%if(leftcurrent=='mystrategy'){%>
+											current
+									<%}%>
+            "><span class="same span2"></span>我的策略</li>
+        </a>
+        <a href="/bidLogCtrl/toBidLog">
+            <li class="leftRecord  <%if(leftcurrent=='bidlog'){%>
+											current
+								   <%}%>
+            
+            "><span class="same span3"></span>投标记录</li>
+        </a>
+        <!-- <a href="">
+            <li class="leftSummary"><span class="same span4"></span>投标统计</li>
+        </a> -->
+    </ul>
+</div>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		<%=title %>
+	</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="https://cdn.paicaifu.com/wealth/img/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/reset.css" />
+	<!--必须-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.paicaifu.com/bidPersonalEdition/css/pub/public.css" />
+	<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var baseUrl = 'http://localhost:3000';
+	</script>
+	<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/tools.js" type="text/javascript" charset="utf-8"></script>
+	<!--公用js-->
+	<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/pub.js" type="text/javascript" charset="utf-8"></script>
+	<!--公用弹窗-->
+	<script src="https://cdn.paicaifu.com/bidPersonalEdition/js/pub/layer.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+
+	<div class="header">
+		<div class="header_content">
+			<ul class="ul1">
+				<li class="li1">客服电话: 400-055-5915</li>
+			</ul>
+			<ul class="ul2">
+
+				<!-- <c:if test="${sessionScope.bid_current_user==null}"> -->
+				<!--未登录-->
+				<li class="li3 buttonbg1"><a href="https://ac.ppdai.com/User/Register?redirect=http%3A%2F%2Fwww.ppdai.com%2F" target="_blank">注册拍拍贷</a></li>
+				<li class="li4 buttonbg2"><a href="${ctx }/unitLoginCtrl/loadUnitLog">拍拍贷登录</a></li>
+				<!-- </c:if> -->
+				<!-- <c:if test="${sessionScope.bid_current_user!=null}"> -->
+				<!--登陆-->
+				<!-- <li class="li3">
+					<a href="/myaccount/toMyAccount" class="undeline">${sessionScope.bid_current_user.userName}</a>
+				</li>
+				<li class="li4">
+					<a id='layout' class="undeline">安全退出</a>
+				</li>
+			</c:if> -->
+			</ul>
+		</div>
+	</div>
+	<div class="nav">
+		<div class="nav_content">
+			<div class="bid_logo">
+				<a href="/"><span>优选快投<br />更赚更省心</span></a>
+			</div>
+			<ul>
+				<li>
+					<a href="/" <%if(current=='index'){%>
+								class="current"
+								<%}%>
+						>首页</a>
+				</li>
+				<li>
+					<a href="/myaccount/toMyAccount" <%if(current=='myaccount'){%>
+														class="current"
+														<%}%>
+					
+					>我的账户</a>
+				</li>
+				<li>
+					<a href="/toAboutMe"  <%if(current=='aboutme'){%>
+											class="current"
+											<%}%>
+					>关于我们</a>
+				</li>
+			</ul>
+		</div>
+	</div>

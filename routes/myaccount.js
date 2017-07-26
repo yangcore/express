@@ -3,9 +3,10 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/toMyAccount', function(req, res, next) {
-  // res.send('respond with a resource');
-  // res.set('views', __dirname +  '/views/myaccount');
-  res.render('myaccount/index');
+  res.render('myaccount/index',{
+    title:'我的账户',
+    current:'myaccount',
+    leftcurrent:'myaccount'
+  });
 });
-// /myaccount/toMyAccount
 module.exports = router;
