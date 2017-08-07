@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 }
 
 gulp.task('tb', function() {
+  console.info(__dirname)
   browserSync.init({
     files: config.watchFiles,
     proxy: config.baseDir,
