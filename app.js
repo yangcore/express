@@ -11,7 +11,10 @@ var myaccount = require('./routes/myaccount');
 var routes = require('./routes/routes');
 var strateryCtrl = require('./routes/strateryCtrl');
 var bidLogCtrl = require('./routes/bidLogCtrl');
+var zts = require('./routes/ztCtr');
+
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,13 +29,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public',express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/myaccount', myaccount);
 app.use('/homeData', routes);
 app.use('/strateryCtrl', strateryCtrl);
+app.use('/routes', routes);
 app.use('/bidLogCtrl', bidLogCtrl);
+app.use('/zts', zts);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
