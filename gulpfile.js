@@ -4,11 +4,10 @@ var gulp = require('gulp'),
  //同步浏览器刷新
   var config = {
   baseDir: 'http://localhost:3000',
-  watchFiles: [ 'D:/other/express/views/*' ]
+  watchFiles: [ __dirname+'/views/*' ]
 }
 
 gulp.task('tb', function() {
-  console.info(__dirname)
   browserSync.init({
     files: config.watchFiles,
     proxy: config.baseDir,
