@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%=title%></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form method="post">
+             <input type="text" name="name" value="">
+            <input type="password" name="password" value="">
+           <input type="submit" value="登录">
+        </form>
+ 
+        <button type="button" id="del">删除</button>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            const del=document.querySelector('#del');
+            del.onclick=function(){
+                 $.ajax({
+                     type:'post',
+                     url:'/login/del',
+                     data:{
+                        id:'598d72a5031a052811cf846e'
+                     },success:function(e){
+                            console.info(e);
+                     }
+                 })
+            }
+        </script>
+    </body>
+</html>
