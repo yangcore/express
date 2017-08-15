@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User=require('../mongo/mongo').User;
+var sha1 = require('sha1');
 //   var BSON = require('bson').BSONPure;
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -10,28 +11,16 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  console.info(req.body);
-  User.find(req.body)(function (err, e) {
-            if (err) return console.error(err);
-            console.info(e,'dsdsd ')
-          if(e.length>0){
-                res.redirect('/');
-            }else{
-                var fluffy = new User({name:'mmm',password:'3333'});
-                    fluffy.save(function(err,e){
-                        if(err) return console.info(err);
-                         res.redirect('/login');
-                    })
-            }
+  req.body.password=sha1(req.body.password);
+  User.find(req.body,function (err,e) {
+        if (err) return console.error(err);
+        if(e.length>0){
+          delete req.body.password
+          req.session.user = req.body;
+          res.send({code:"0000",msg:'验证通过',url:'/',info:req.session.user});
+        }else{
+            res.send({code:"1001",msg:'用户名或密码错误'});
+        }
 })
 });
-
-// router.post('/del',function(req,res){
-//     console.info(BSON)
-//     console.info('进来',req.body.id);
-//     User.remove({"_id":req.body.id}).then(function(){
-//         res.send({code:1001})
-//     })
-
-// })
 module.exports = router;
